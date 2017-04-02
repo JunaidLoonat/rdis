@@ -44,14 +44,14 @@ struct _ins_edge {
 
 
 struct _ins * ins_create    (uint64_t address,
-                             uint8_t * bytes,
+                             const uint8_t * bytes,
                              size_t size,
                              const char * description,
                              const char * comment);
 
 void          ins_delete      (struct _ins * ins);
 struct _ins * ins_copy        (struct _ins * ins);
-int           ins_cmp           (struct _ins * lhs, struct _ins * rhs);
+int           ins_cmp         (struct _ins * lhs, struct _ins * rhs);
 json_t *      ins_serialize   (struct _ins * ins);
 struct _ins * ins_deserialize (json_t * json);
 

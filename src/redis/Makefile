@@ -1,4 +1,4 @@
-OBJS=rdil.o rdil_x86.o
+OBJS = redis_x86.o redis_x86_graph.o
 
 CCFLAGS=-Wall -O2 -g
 INCLUDE=-iquote../ -iquote../container
@@ -6,6 +6,9 @@ INCLUDE=-iquote../ -iquote../container
 all : $(OBJS)
 
 %.o : %.c %.h
+	$(CC) -c -o $@ $< $(INCLUDE) $(CCFLAGS)
+
+%.o : %.c
 	$(CC) -c -o $@ $< $(INCLUDE) $(CCFLAGS)
 
 clean :
